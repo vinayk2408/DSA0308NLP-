@@ -1,0 +1,22 @@
+import re
+
+text = "Python is easy to learn. Python is a popular programming language."
+
+pattern = "Python"
+
+match_result = re.match(pattern, text)
+if match_result:
+    print("Match found at the beginning:", match_result.group())
+else:
+    print("No match at the beginning.")
+
+search_result = re.search(pattern, text)
+if search_result:
+    print("Search found:", search_result.group())
+    print("Position:", search_result.start())
+else:
+    print("No match found.")
+
+all_matches = re.findall(pattern, text)
+print("All matches:", all_matches)
+print("Number of matches:", len(all_matches))
