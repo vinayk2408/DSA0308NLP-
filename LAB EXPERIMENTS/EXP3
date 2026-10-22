@@ -1,0 +1,26 @@
+# Done by Vinay
+# Registration Number: 192425034
+
+from nltk.stem import PorterStemmer, WordNetLemmatizer
+
+print("Done by Vinay")
+print("Registration Number: 192425034")
+
+stemmer = PorterStemmer()
+lemmatizer = WordNetLemmatizer()
+
+words = ["playing", "played", "plays", "cars", "running", "better"]
+
+print("\nWord            Stem            Lemma")
+
+for word in words:
+    stem = stemmer.stem(word)
+
+    try:
+        lemma = lemmatizer.lemmatize(word, pos='v')
+    except LookupError:
+        lemma = "WordNet missing"
+
+    print("{:<16}{:<16}{:<16}".format(word, stem, lemma))
+
+print("\nAnalysis completed.")
