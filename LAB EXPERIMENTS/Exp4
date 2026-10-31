@@ -1,0 +1,18 @@
+def plural_fsm(word):
+    word = word.lower()
+
+    if word.endswith(("s", "sh", "ch", "x", "z")):
+        return word + "es"
+
+    elif word.endswith("y") and len(word) > 1 and word[-2] not in "aeiou":
+        return word[:-1] + "ies"
+
+    else:
+        return word + "s"
+
+
+noun = input("Enter an English noun: ")
+plural = plural_fsm(noun)
+
+print("Singular Noun:", noun)
+print("Plural Noun:", plural)
