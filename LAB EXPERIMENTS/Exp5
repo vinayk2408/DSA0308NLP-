@@ -1,0 +1,20 @@
+
+def porter_stem(word):
+    suffixes = ["ingly", "edly", "ing", "ed", "ly", "es", "s"]
+
+    for suffix in suffixes:
+        if word.endswith(suffix) and len(word) > len(suffix) + 2:
+            word = word[:-len(suffix)]
+            break
+
+    if word.endswith("i"):
+        word = word[:-1] + "y"
+
+    return word
+
+
+words = ["playing", "played", "plays", "running",
+         "happiness", "studies", "connected"]
+
+for word in words:
+    print(word, "->", porter_stem(word))
